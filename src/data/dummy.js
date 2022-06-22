@@ -489,7 +489,7 @@ export const links = [
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: 'purchase',
+        name: 'employees',
         icon: <BsBoxSeam />,
       },
       {
