@@ -1,8 +1,11 @@
 import React from 'react'
 
+/* 
+Change the class name !!!
+*/
 const Employees = () => {
   return (
-    <div>Employees</div>
+    <div>Purchase</div>
   )
 }
 
