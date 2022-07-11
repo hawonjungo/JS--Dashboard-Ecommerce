@@ -43,7 +43,18 @@ const Suppliers = () => {
         </ColumnsDirective>
         <Inject services={[Resize,Sort,ContextMenu,Filter,Page,ExcelExport,Edit,PdfExport,Search,Toolbar]}/>
       </GridComponent>
+
+
+      <div className='p-4 flex rounded-lg shadow-lg  justify-center items-center '>
+                        <Button 
+                        color = "white"
+                        bgColor= "blue"
+                        text="Submit"
+                        borderRadius="10px"                
+                        />
+        </div>  
     </div>
+    
   )
 }
 
