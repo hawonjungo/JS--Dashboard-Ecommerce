@@ -1,15 +1,13 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import {  AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
+import { FiShoppingBag,  FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import {FaBoxes} from 'react-icons/fa';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
+import {  BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
-import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
+import { RiContactsLine} from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
-import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
@@ -22,7 +20,7 @@ import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import product8 from './product8.jpg';
+
 
 export const gridOrderImage = (props) => (
   <div>
@@ -435,7 +433,8 @@ export const customersGrid = [
 ];
 
 export const employeesGrid = [
-  { headerText: 'Employee',
+  { type: 'checkbox', width: '50' },
+  { headerText: 'Product name',
     width: '150',
     template: gridEmployeeProfile,
     textAlign: 'Center' },
@@ -445,27 +444,28 @@ export const employeesGrid = [
     textAlign: 'Center',
   },
   { field: 'Title',
-    headerText: 'Designation',
+    headerText: 'ID',
     width: '170',
     textAlign: 'Center',
+    isPrimaryKey: 'true',
   },
-  { headerText: 'Country',
+  { headerText: 'Price',
     width: '120',
     textAlign: 'Center',
     template: gridEmployeeCountry },
 
   { field: 'HireDate',
-    headerText: 'Hire Date',
+    headerText: 'Quantity',
     width: '135',
     format: 'yMd',
     textAlign: 'Center' },
 
   { field: 'ReportsTo',
-    headerText: 'Reports To',
+    headerText: 'Pack',
     width: '120',
     textAlign: 'Center' },
   { field: 'EmployeeID',
-    headerText: 'Employee ID',
+    headerText: 'Item total',
     width: '125',
     textAlign: 'Center' },
 ];
@@ -489,11 +489,11 @@ export const links = [
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: 'employees',
+        name: 'sale',
         icon: <BsBoxSeam />,
       },
       {
-        name: 'product',
+        name: 'products',
         icon: <FaBoxes />,
       },
       {
@@ -504,19 +504,7 @@ export const links = [
   },
   {
     title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
+    links: [      
       {
         name: 'color-picker',
         icon: <BiColorFill />,
@@ -543,22 +531,22 @@ export const links = [
         name: 'pie',
         icon: <FiPieChart />,
       },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
+      // {
+      //   name: 'financial',
+      //   icon: <RiStockLine />,
+      // },
+      // {
+      //   name: 'color-mapping',
+      //   icon: <BsBarChart />,
+      // },
+      // {
+      //   name: 'pyramid',
+      //   icon: <GiLouvrePyramid />,
+      // },
+      // {
+      //   name: 'stacked',
+      //   icon: <AiOutlineBarChart />,
+      // },
     ],
   },
 ];
@@ -890,7 +878,7 @@ export const ordersGrid = [
     textAlign: 'Center',
   },
   { field: 'CustomerName',
-    headerText: 'Customer Name',
+    headerText: 'Supplier',
     width: '150',
     textAlign: 'Center',
   },
@@ -911,14 +899,14 @@ export const ordersGrid = [
   },
   {
     field: 'OrderID',
-    headerText: 'Order ID',
+    headerText: 'Item ID',
     width: '120',
     textAlign: 'Center',
   },
 
   {
     field: 'Location',
-    headerText: 'Location',
+    headerText: 'Category',
     width: '150',
     textAlign: 'Center',
   },
@@ -2133,8 +2121,8 @@ export const ordersData = [
 
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
-    Status: 'pending',
+    Location: 'Vegetable',
+    Status: '120',
     StatusBg: '#FB9678',
     ProductImage:
       product6,
@@ -2144,8 +2132,8 @@ export const ordersData = [
     CustomerName: 'Carson Darrin',
     TotalAmount: 56.34,
     OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
+    Location: 'Cup',
+    Status: '560',
     StatusBg: '#8BE78B',
     ProductImage:
       product5,
@@ -2155,8 +2143,8 @@ export const ordersData = [
     CustomerName: 'Fran Perez',
     TotalAmount: 93.31,
     OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
+    Location: 'Icream',
+    Status: '1020',
     StatusBg: '#03C9D7',
     ProductImage:
       product7,
@@ -2165,9 +2153,9 @@ export const ordersData = [
     OrderID: 893486,
     CustomerName: 'Anika Viseer',
     TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
+    OrderItems: 'Nike',
+    Location: 'Shoes',
+    Status: '07',
     StatusBg: '#FF5C8E',
     ProductImage:
       product4,
@@ -2177,8 +2165,8 @@ export const ordersData = [
     CustomerName: 'Miron Vitold',
     TotalAmount: 23.99,
     OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
+    Location: 'Car toy',
+    Status: 'Out stock',
     StatusBg: 'red',
     ProductImage:
     product1,
@@ -2188,8 +2176,8 @@ export const ordersData = [
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
+    Location: 'Glass',
+    Status: '05',
     StatusBg: '#FF5C8E',
     ProductImage:
       product2,
