@@ -497,7 +497,7 @@ export const links = [
         icon: <FaBoxes />,
       },
       {
-        name: 'customers',
+        name: 'suppliers',
         icon: <RiContactsLine />,
       },     
     ],
@@ -891,7 +891,7 @@ export const ordersGrid = [
     width: '150',
   },
   {
-    headerText: 'Status',
+    headerText: 'Quantity',
     template: gridOrderStatus,
     field: 'OrderItems',
     textAlign: 'Center',
