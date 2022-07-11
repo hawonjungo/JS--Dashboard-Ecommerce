@@ -12,15 +12,9 @@ const Sale = () => {
   const editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, newRowPosition: 'Top' };
   const pageSettings = { pageCount: 5 };
  
-  return (    
-
-    
+  return (       
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
-
-     
-
-      <Header category="Page" title="Sale"/>
-      
+      <Header category="Page" title="Sale"/>      
       <GridComponent
         dataSource={""} //order data
         allowPaging // page
@@ -29,9 +23,7 @@ const Sale = () => {
         width='auto'        
         editSettings={editSettings} 
         pageSettings={pageSettings} 
-      > 
-        
-
+      >       
         <div className="mb-8">
                 <div className="m-2 md:m-1 p-2 md:p-1">
                     <TextBoxComponent placeholder="Customer name" cssClass="e-outline" floatLabelType="Auto"/>
@@ -81,16 +73,9 @@ const Sale = () => {
                         text=" Pay"
                         borderRadius="10px"                
                         />
-                      </div>
-                      
-                  </div>
-                  
+                      </div>                      
+                  </div>                  
               </div>
-
-
-
-
-
     </div>
   )
 }
