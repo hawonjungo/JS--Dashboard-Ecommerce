@@ -4,7 +4,9 @@ import { FiSettings} from 'react-icons/fi';
 import { TooltipComponent} from '@syncfusion/ej2-react-popups';
 
 import {Navbar, Footer, Sidebar, ThemeSettings,Button} from './components';
-import { Ecommerce,Orders,Sale,Stacked,Pyramid,Products,Supplier,Area,Bar,Pie,Financial,ColorMapping,ColorPicker,Line} from './pages'; 
+import { Ecommerce,Orders,Sale,Stacked,Pyramid,Supplier,Area,Bar,Pie,Financial,ColorMapping,ColorPicker,Line} from './pages'; 
+import Product from './pages/Product'
+import AddProduct from './pages/Product/AddProduct'
 import './App.css'
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -55,7 +57,9 @@ const App = () => {
               
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/sale" element={<Sale />} />
-                <Route path="/products" element={<Products />} />
+                <Route path="/products" element={<Product />} />
+                <Route path="/addProduct" element={<AddProduct />} />
+
                 <Route path="/suppliers" element={<Supplier />} />
 
 

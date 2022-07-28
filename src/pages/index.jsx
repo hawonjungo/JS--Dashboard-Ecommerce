@@ -1,7 +1,6 @@
 export { default as Ecommerce } from './Ecommerce';
 export { default as Orders } from './Orders';
 export { default as Sale } from './Sale';
-export { default as Products } from './Products';
 export { default as Supplier } from './Suppliers';
 export { default as ColorPicker } from './ColorPicker';
 export { default as Area } from './Charts/Area';

@@ -45,3 +45,24 @@
 .e-input-group:not(.e-float-icon-left), .e-input-group.e-success:not(.e-float-icon-left), .e-input-group.e-warning:not(.e-float-icon-left), .e-input-group.e-error:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left){
   border: none;
 }
+
+.product-button{
+  width: 15%;
+  height: 50%;
+  color: white;
+  background: blue;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-product-container {
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
