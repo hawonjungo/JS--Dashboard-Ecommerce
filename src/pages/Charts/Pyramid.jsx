@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
 
 const Pyramid = () => {
-  return (
-    <div>Pyramid</div>
-  )
-}
+  return <PageWrapper>Pyramid</PageWrapper>;
+};
 
-export default Pyramid
+export default Pyramid;

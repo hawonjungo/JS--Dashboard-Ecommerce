@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
 
 const Line = () => {
-  return (
-    <div>Line</div>
-  )
-}
+  return <PageWrapper>Line</PageWrapper>;
+};
 
-export default Line
+export default Line;

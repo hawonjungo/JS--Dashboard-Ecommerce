@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
 
 const Area = () => {
-  return (
-    <div>Area</div>
-  )
-}
+  return <PageWrapper>Area</PageWrapper>;
+};
 
-export default Area
+export default Area;

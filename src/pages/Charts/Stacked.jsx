@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
 
 const Stacked = () => {
-  return (
-    <div>Stacked</div>
-  )
-}
+  return <PageWrapper>Stacked</PageWrapper>;
+};
 
-export default Stacked
+export default Stacked;

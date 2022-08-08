@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
 
 const Pie = () => {
-  return (
-    <div>Pie</div>
-  )
-}
+  return <PageWrapper>Pie</PageWrapper>;
+};
 
-export default Pie
+export default Pie;

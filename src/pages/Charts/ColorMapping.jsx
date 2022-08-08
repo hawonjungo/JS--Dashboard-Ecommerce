@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
 
 const ColorMapping = () => {
-  return (
-    <div>ColorMapping</div>
-  )
-}
+  return <PageWrapper>ColorMapping</PageWrapper>;
+};
 
-export default ColorMapping
+export default ColorMapping;

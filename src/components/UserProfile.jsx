@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
-  return (
-    <div>UserProfile</div>
-  )
-}
+  const navigate = useNavigate();
 
-export default UserProfile
+  const logout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("admin");
+    navigate("/signIn");
+  };
+  return <button onClick={logout}>Logout</button>;
+};
+
+export default UserProfile;

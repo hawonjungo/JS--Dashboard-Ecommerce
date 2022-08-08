@@ -55,14 +55,168 @@
   text-align: center;
 }
 
+.add-product-container {
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+
 .product-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-header .heading{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.add-product-container {
-  padding: 20px;
-  border: 1px solid lightgray;
-  border-radius: 15px;
+.logoContainer__imageContainer {
+  width: 5rem;
+  height: 5rem;
+  transition: all 0.2s linear;
+}
+
+.logoContainer__imageContainer img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.logoContainer__imageContainer {
+  position: relative;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.logoContainer__imageContainer:hover .logoContainer__imageContainer__overlay {
+  display: flex;
+}
+
+.logoContainer__imageContainer__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s linear;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoContainer__imageContainer__overlay img {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 1rem;
+}
+
+.mediaViewInfo {
+  --web-view-name: YORD - LOGIN;
+  --web-view-id: YORD___LOGIN;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+
+:root {
+  --web-view-ids: YORD___LOGIN;
+}
+
+* {
+  margin: 0;
+  font-family: Arial;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  border: none;
+}
+
+.LOGIN_bq_Class {
+  position: relative;
+  left: 70px;
+  overflow: visible;
+  width: 77px;
+  white-space: nowrap;
+  top: 20px;
+  text-align: left;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.New_to_YORD__SIGNUP_Class {
+  position: relative;
+  right: 55px;
+  top: 32px;
+  overflow: visible;
+  width: 327px;
+  height: 16px;
+
+  text-align: center;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.signup-click {
+  font-style: normal;
+  font-weight: bold;
+  color: rgba(255, 22, 22, 1);
+  text-decoration: true;
+}
+
+.Email_Class {
+  position: relative;
+  left: 116px;
+  line-height: 30px;
+  width: 44px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.Forgot_your_password__Class {
+  position: relative;
+  left: 118px;
+  top: 140px;
+  overflow: visible;
+  width: 157px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: rgba(3, 152, 158, 1);
+  text-decoration: underline;
+}
+
+#login_Button {
+  background-color: rgba(255, 22, 22, 1);
+  width: 58%;
+  position: relative;
+  top: 120px;
+  font-size: 18px;
+  font-weight: bolder;
+  left: 115px;
+  font-style: normal;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
