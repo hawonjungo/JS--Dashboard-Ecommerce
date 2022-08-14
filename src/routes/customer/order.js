@@ -80,4 +80,20 @@ router.get("/getOrder/:_order", async (req, res) => {
   }
 });
 
+router.delete("/:_id", async (req, res) => {
+  try {
+    const { _id } = req.params;
+    console.log(_id);
+    const orderExists = await Order.findById(_id);
+    if (!orderExists) return BadRequest(res, "No Order to delete!");
+
+    const response = await Order.findByIdAndRemove(_id);
+    if (!response) return ServerError(res, "Opps!Something went wrong!");
+
+    res.send({ msg: "Order deleted!" });
+  } catch (err) {
+    GenerateError(res, err);
+  }
+});
+
 module.exports = router;

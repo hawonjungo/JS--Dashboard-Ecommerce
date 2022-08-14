@@ -65,4 +65,22 @@ router.put("/:_id", async (req, res) => {
   }
 });
 
+router.put("/quantity/:_id", async (req, res) => {
+  // console.log(req.params);
+  // console.log(req.body);
+  try {
+    const { _id } = req.params;
+    const productExist = await Product.findById(_id);
+    productExist.quantity = productExist.quantity - 1;
+    console.log(productExist + "ddd");
+    const response = await Product.findByIdAndUpdate(_id, {
+      ...productExist,
+    });
+
+    res.send({ product: response });
+  } catch (err) {
+    GenerateError(res, err);
+  }
+});
+
 module.exports = router;
