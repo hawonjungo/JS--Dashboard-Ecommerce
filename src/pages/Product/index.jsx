@@ -55,11 +55,13 @@ const Product = () => {
   }, [searchKeyword]);
 
   const deleteProduct = async (item) => {
-    if (!selectedItem) return alert("Please select an Item to delete!");
-
-    await axios.delete(`${BACKEND_API_URL}/admin/product/${item._id}`);
-
-    window.location.reload();
+    try {
+      await axios.delete(`${BACKEND_API_URL}/admin/product/${item._id}`);
+      const list = products.filter((product) => product._id !== item._id);
+      setFiltered([...list]);
+    } catch (err) {
+      console.log("err");
+    }
   };
 
   const updateProduct = (item) => {

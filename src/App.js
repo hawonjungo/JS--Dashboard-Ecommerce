@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import {
   Ecommerce,
   Sale,
@@ -18,14 +17,16 @@ import {
 import Product from "./pages/Product";
 import AddProduct from "./pages/Product/AddProduct";
 import "./App.css";
-
+import { useStateContext } from "./contexts/ContextProvider";
 import EditProduct from "./pages/Product/EditProduct";
+import { useLocation, useNavigate } from "react-router-dom";
 import SignIn from "./pages/Authentication/User/SignIn";
 import SignUp from "./pages/Authentication/User/SignUp";
 import AdminLogin from "./pages/Authentication/Admin/AdminLogin";
 import Cart from "./pages/Cart";
 import Order from "./pages/Order";
 import OrderProduct from "./pages/Order/OrderProduct";
+import AdminSignUp from "./pages/Authentication/Admin/AdminSignUp";
 const App = () => {
   return (
     <BrowserRouter>
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/orders" element={<Order />} />
         <Route path="/orderProduct/:_order" element={<OrderProduct />} />
+        <Route path="/adminSignUp" element={<AdminSignUp />} />
       </Routes>
     </BrowserRouter>
   );

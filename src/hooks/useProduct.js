@@ -75,12 +75,26 @@ const useProduct = () => {
     }
   };
 
+  const updateProductQuantity = async (id) => {
+    try {
+      const response = await axios.put(
+        `${BACKEND_API_URL}/admin/product/quantity/${id}`
+      );
+
+      console.log(response.data);
+      return { updatedProduct: response.data.product };
+    } catch (err) {
+      alert("Something Wrong");
+    }
+  };
+
   return {
     addNewProduct,
     uploadProductImg,
     getAllProducts,
     deleteProduct,
     updateProduct,
+    updateProductQuantity,
   };
 };
 

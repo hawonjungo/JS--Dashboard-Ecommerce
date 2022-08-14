@@ -1,34 +1,40 @@
 import React, { useState, useEffect } from "react";
+import { useTheme } from "@mui/material/styles";
+import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import { Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Button, Link } from "@mui/material";
-import useAuthenticate from "../../../hooks/useAuthenticate";
 import { useNavigate } from "react-router-dom";
+import useAuthenticate from "../../../hooks/useAuthenticate";
+import { useStateContext } from "../../../contexts/ContextProvider";
 
-const AdminLogin = () => {
-  const [redirect, setRedirect] = useState(false);
-  const navigate = useNavigate();
-
-  const [user, setUser] = useState({
+const AdminSignUp = () => {
+  const [admin, setAdmin] = useState({
     email: "",
     password: "",
   });
 
-  const { adminLogin } = useAuthenticate();
+  const navigate = useNavigate();
+  const { adminRegister } = useAuthenticate();
+  const { authenticate, setAuthenticate } = useStateContext();
 
   function handleChange(e) {
     const { name, value } = e.target;
-    setUser((user) => ({ ...user, [name]: value }));
+    setAdmin((admin) => ({ ...admin, [name]: value }));
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (user.email && user.password) {
-      const { userObject } = await adminLogin(user);
-      localStorage.setItem("admin", JSON.stringify(userObject));
+    if (admin.password.length < 5)
+      return alert("Password must be atleast 5 characters long!");
+
+    if (admin.email && admin.password) {
+      const { adminObject } = await adminRegister(admin);
+      if (!adminObject) return;
+      localStorage.setItem("admin", JSON.stringify(adminObject));
       redirectToHome();
     }
   }
@@ -55,29 +61,21 @@ const AdminLogin = () => {
         direction="column"
         justifyContent="flex-start"
         alignItems="center"
-        sx={{ mt: 25 }}
+        sx={{ mt: 5 }}
       >
-        <Grid item>
-          <CardMedia
-            component="img"
-            image={require("../../../assets/ecommerce.png")}
-            alt="green iguana"
-            sx={{ width: "25ch" }}
-          />
-        </Grid>
         <Grid item sx={{ mt: 3 }}>
           <Typography gutterBottom variant="h4" component="div">
-            Admin Login
+            Admin Sign Up
           </Typography>
         </Grid>
         <Grid item sx={{ m: 3 }}>
           <span>Already have an account? </span>
           <Link
-            href="/adminSignUp"
+            href="/adminLogin"
             underline="hover"
             sx={{ color: "red", fontWeight: "bold" }}
           >
-            AdminSignUp
+            AdminLogIn
           </Link>
         </Grid>
 
@@ -104,23 +102,25 @@ const AdminLogin = () => {
             </Grid>
             <Grid item>
               <TextField
+                type="password"
                 name="password"
                 label="Password"
-                type="password"
                 id=""
                 sx={{ width: "40ch" }}
                 autoComplete="current-password"
                 onChange={(e) => handleChange(e)}
               />
             </Grid>
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{ width: "100%", fontWeight: "bold" }}
-              color="error"
-            >
-              Sign In
-            </Button>
+            <Grid item>
+              <Button
+                type="submit"
+                variant="contained"
+                style={{ width: "100%", fontWeight: "bold" }}
+                color="error"
+              >
+                Sign Up
+              </Button>
+            </Grid>
           </Box>
         </Grid>
       </Grid>
@@ -128,4 +128,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default AdminSignUp;

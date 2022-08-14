@@ -28,7 +28,17 @@ const useAuthenticate = () => {
       handleErrors(err);
     }
   };
-
+  const adminRegister = async (admin) => {
+    try {
+      const response = await axios.post(
+        `${BACKEND_API_URL}/admin/auth/register`,
+        admin
+      );
+      return { adminObject: response.data };
+    } catch (err) {
+      handleErrors(err);
+    }
+  };
   const register = async (user) => {
     try {
       const response = await axios.post(
@@ -42,7 +52,7 @@ const useAuthenticate = () => {
     }
   };
 
-  return { login, register, adminLogin };
+  return { login, register, adminLogin, adminRegister };
 };
 
 export default useAuthenticate;

@@ -40,7 +40,7 @@ const ConfirmModal = ({ open, setOpen, product, setProduct, totalPrice }) => {
 
   const placeOrder = async () => {
     let basket = product.map((item) => {
-      updateQuantity(item);
+      //updateQuantity(item);
       return { _id: item._id, qty: 1 };
     });
     const { order } = await createOrder(user, basket);

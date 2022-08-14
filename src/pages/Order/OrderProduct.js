@@ -9,9 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import { BACKEND_API_URL } from "../../helpers/variables";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import EditIcon from "@mui/icons-material/Edit";
-import { FiShoppingCart } from "react-icons/fi";
+
 import PageWrapper from "../../components/PageWrapper";
 import { Grid } from "@mui/material";
 import useProduct from "../../hooks/useProduct";
