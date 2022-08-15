@@ -65,7 +65,6 @@ export default function OrderProduct() {
       product.map((item) => items.push(filterProduct(item._id)));
       setOrderProduct([...items]);
     }
-    debugger;
   }, [product, setProduct]);
 
   return (

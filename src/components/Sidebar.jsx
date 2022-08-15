@@ -54,23 +54,19 @@ const Sidebar = () => {
             {links.map((item) => (
               <div className={item.title}>
                 <p className="text-gray-400 m-3 mt-4 uppercase">{item.title}</p>
-                {item.links.map(
-                  (link) =>
-                    ((link.name === "orders" && admin) ||
-                      link.name !== "orders") && (
-                      <NavLink
-                        to={`/${link.name}`}
-                        key={link.name}
-                        onClick={handleCloseSideBar}
-                        className={({ isActive }) =>
-                          isActive ? activeLink : normalLink
-                        }
-                      >
-                        {link.icon}
-                        <span className="capitalize">{link.name}</span>
-                      </NavLink>
-                    )
-                )}
+                {item.links.map((link) => (
+                  <NavLink
+                    to={`/${link.name}`}
+                    key={link.name}
+                    onClick={handleCloseSideBar}
+                    className={({ isActive }) =>
+                      isActive ? activeLink : normalLink
+                    }
+                  >
+                    {link.icon}
+                    <span className="capitalize">{link.name}</span>
+                  </NavLink>
+                ))}
               </div>
             ))}
           </div>

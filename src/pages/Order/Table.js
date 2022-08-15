@@ -19,6 +19,7 @@ import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantity
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import axios from "axios";
 import useProduct from "../../hooks/useProduct";
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
@@ -43,6 +44,7 @@ export default function OrdersTables({ orders, setOrders }) {
   const { getOrders, updateOrder } = useOrder();
   const navigate = useNavigate();
   const { updateProductQuantity } = useProduct();
+  const admin = JSON.parse(localStorage.getItem("admin"));
   React.useEffect(() => {
     getInitialData();
   }, []);
@@ -96,7 +98,7 @@ export default function OrdersTables({ orders, setOrders }) {
             <StyledTableCell align="left">Contact Information</StyledTableCell>
             <StyledTableCell align="left">Adress</StyledTableCell>
             <StyledTableCell align="left">Total Price</StyledTableCell>
-            <StyledTableCell align="left">Status</StyledTableCell>
+            {admin && <StyledTableCell align="left">Status</StyledTableCell>}
             <StyledTableCell align="left">Product Details</StyledTableCell>
           </TableRow>
         </TableHead>
@@ -124,23 +126,27 @@ export default function OrdersTables({ orders, setOrders }) {
                   {item.totalPrice}
                 </p>
               </StyledTableCell>
-              <StyledTableCell>
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">Status</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={item.status}
-                    label="Status"
-                    onChange={(e) => handleStatusUpdate(e, item)}
-                  >
-                    <MenuItem value={"Processed"}>Processed</MenuItem>
-                    <MenuItem value={"Delivered"}>Delivered</MenuItem>
-                    <MenuItem value={"Completed"}>Completed</MenuItem>
-                    <MenuItem value={"Cancelled"}>Cancelled</MenuItem>
-                  </Select>
-                </FormControl>
-              </StyledTableCell>
+              {admin && (
+                <StyledTableCell>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Status
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={item.status}
+                      label="Status"
+                      onChange={(e) => handleStatusUpdate(e, item)}
+                    >
+                      <MenuItem value={"Processed"}>Processed</MenuItem>
+                      <MenuItem value={"Delivered"}>Delivered</MenuItem>
+                      <MenuItem value={"Completed"}>Completed</MenuItem>
+                      <MenuItem value={"Cancelled"}>Cancelled</MenuItem>
+                    </Select>
+                  </FormControl>
+                </StyledTableCell>
+              )}
               <StyledTableCell align="left">
                 <Button
                   className="productsTable__description__removeButton"
@@ -151,15 +157,17 @@ export default function OrdersTables({ orders, setOrders }) {
                 >
                   <ProductionQuantityLimitsIcon />
                 </Button>
-                <Button
-                  className="productsTable__description__removeButton"
-                  variant="contained"
-                  color="error"
-                  onClick={() => deleteOrder(item)}
-                  style={{ backgroundColor: "red", marginRight: "10px" }}
-                >
-                  <DeleteOutlineIcon />
-                </Button>
+                {admin && (
+                  <Button
+                    className="productsTable__description__removeButton"
+                    variant="contained"
+                    color="error"
+                    onClick={() => deleteOrder(item)}
+                    style={{ backgroundColor: "red", marginRight: "10px" }}
+                  >
+                    <DeleteOutlineIcon />
+                  </Button>
+                )}
               </StyledTableCell>
             </StyledTableRow>
           ))}
