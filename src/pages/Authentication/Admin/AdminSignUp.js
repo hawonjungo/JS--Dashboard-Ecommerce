@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useTheme } from "@mui/material/styles";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
+
 import { Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Button, Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import useAuthenticate from "../../../hooks/useAuthenticate";
-import { useStateContext } from "../../../contexts/ContextProvider";
 
 const AdminSignUp = () => {
   const [admin, setAdmin] = useState({
@@ -18,7 +15,6 @@ const AdminSignUp = () => {
 
   const navigate = useNavigate();
   const { adminRegister } = useAuthenticate();
-  const { authenticate, setAuthenticate } = useStateContext();
 
   function handleChange(e) {
     const { name, value } = e.target;

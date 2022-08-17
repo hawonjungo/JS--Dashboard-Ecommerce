@@ -123,6 +123,7 @@ export default function OrdersTables({ orders, setOrders }) {
               </StyledTableCell>
               <StyledTableCell align="left">
                 <p className="productsTable__description__price">
+                  <span>$</span>
                   {item.totalPrice}
                 </p>
               </StyledTableCell>
