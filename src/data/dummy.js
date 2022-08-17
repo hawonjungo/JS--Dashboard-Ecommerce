@@ -530,15 +530,15 @@ export const links = [
       },
     ],
   },
-  {
-    title: "Apps",
-    links: [
-      {
-        name: "color-picker",
-        icon: <BiColorFill />,
-      },
-    ],
-  },
+  // {
+  //   title: "Apps",
+  //   links: [
+  //     {
+  //       name: "color-picker",
+  //       icon: <BiColorFill />,
+  //     },
+  //   ],
+  // },
   {
     title: "Charts",
     links: [
@@ -551,14 +551,14 @@ export const links = [
         icon: <AiOutlineAreaChart />,
       },
 
-      {
-        name: "bar",
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: "pie",
-        icon: <FiPieChart />,
-      },
+      // {
+      //   name: "bar",
+      //   icon: <AiOutlineBarChart />,
+      // },
+      // {
+      //   name: "pie",
+      //   icon: <FiPieChart />,
+      // },
       // {
       //   name: 'financial',
       //   icon: <RiStockLine />,
