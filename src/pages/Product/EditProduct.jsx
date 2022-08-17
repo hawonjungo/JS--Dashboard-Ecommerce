@@ -76,10 +76,10 @@ const EditProduct = (props) => {
                 cssClass="e-outline"
                 floatLabelType="Auto"
                 onChange={handleChange}
-                name="description"
+                name="desc"
                 required={true}
                 type="text"
-                value={product.title}
+                value={product.desc}
               />
             </div>
             <div className="m-2 md:m-1 p-2 md:p-1">
